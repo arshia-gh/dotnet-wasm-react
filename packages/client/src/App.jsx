@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { findMultiplesOf } from "@core/dotnet-wasm-bindings";
+import { exported } from "@core/dotnet-wasm-bindings";
 
 function App() {
   const [number, setNumber] = useState(1);
@@ -12,7 +12,7 @@ function App() {
         <input onInput={(e) => setNumber(+e.currentTarget.value)} />
       </label>
       <button onClick={async () => {
-        const multiples = await findMultiplesOf(number);
+        const multiples = await exported.Math.FindMultiplesOf(number);
         setMultiples(Array.from(multiples))
         console.log(multiples);
       }}>
