@@ -1,0 +1,7 @@
+{
+    "name": "react-dotnet",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ]
+}

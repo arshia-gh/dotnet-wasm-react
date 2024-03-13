@@ -1,0 +1,14 @@
+{
+    "name": "@core/dotnet-wasm-bindings",
+    "type": "module",
+    "private": "true",
+    "scripts": {
+        "build": "dotnet publish -c Release -p:RunAOTCompilation=true Math.csproj",
+        "dev": "dotnet publish -c Debug Math.csproj"
+    },
+    "exports": {
+        ".": {
+            "import": "./main.js"
+        }
+    }
+}
